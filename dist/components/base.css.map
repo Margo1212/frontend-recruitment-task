@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/base.scss","components/base.css"],"names":[],"mappings":"AAAA,iBACI,qBAAA,CACA,QAAA,CACA,SCCJ","file":"base.css","sourcesContent":["*, ::before, ::after{\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n","*, ::before, ::after {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}"]}

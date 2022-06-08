@@ -1,0 +1,60 @@
+.header {
+    max-width: px-to-rem(1440);
+    height: px-to-rem(960);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: px-to-rem(96);
+    font-family: $base-font-family;
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        width: px-to-rem(980);
+        height: px-to-rem(330);
+        align-items: center;
+        justify-content: space-between;
+
+
+        .image{
+            width:  px-to-rem(505);
+            height: px-to-rem(330);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: px-to-rem(380);
+            height: px-to-rem(250);
+
+            &__title{
+                font-weight: 700;
+                font-size: px-to-rem(42);
+            }
+
+            &__text {
+                font-weight: 300;
+                line-height: px-to-rem(24);
+            }
+
+            &__btn {
+                width: 128px;
+                padding: 16px 40px;
+                border-radius: 32px;
+                background: $primary-color;
+                color: azure;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $hover-primary-color;
+                }
+
+                &:active {
+                    background-color: $active-primary-color;
+                }
+            }
+        }
+    }
+}
