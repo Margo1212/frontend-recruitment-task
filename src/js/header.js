@@ -1,5 +1,23 @@
 import createTag from "./utils/createTag.js";
 import { openPopup } from "./popup.js";
+let counter = 0
+
+
+const clickCounter = () => {
+    counter++
+    document.querySelector('.alert-box__hightlight').textContent = counter
+
+    if (counter > 5) {
+        const btnReset = document.querySelector('.alert-box__reset-btn')
+        btnReset.classList.remove('alert-box__reset-btn')
+        btnReset.classList.add('alert-box__open')
+    }
+}
+
+export const reset = (e) => {
+    e.preventDefault();
+    counter = 0
+};
 
 export const createHeaderSection = () => {
     const headerSection = createTag({
@@ -46,10 +64,10 @@ export const createHeaderSection = () => {
             name: "click",
             callback: () => {
                 openPopup()
+                clickCounter()
             },
           },
     })
-    
     
     headerSection.appendChild(headerContainer)
     headerContainer.append(imageElement, divContent)

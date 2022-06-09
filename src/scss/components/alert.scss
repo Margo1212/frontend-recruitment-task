@@ -13,13 +13,15 @@
         width: 920px;
         height: 210px;
         background-color: #fff;
-        padding: 56px 95px 0;
+        padding: 35px 95px 0;
+        display: flex;
+        flex-direction: column;
         position: relative;
         
 
         &__title {
            @include title-style;
-           margin-bottom: 24px;
+           margin-bottom: 20px;
         }
 
         &__icon {
@@ -35,5 +37,33 @@
             top: px-to-rem(46);
             right: px-to-rem(46);
         }
+
+
+        &__reset-btn {
+                display: none;     
+        }
+
+        &__open{
+            display: block;
+            width: 128px;
+            padding: 13px 30px;
+            border-radius: 32px;
+            margin-top: 20px;
+            font-weight: 700;
+            background: $primary-color;
+            color: $primary-font-color;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $hover-primary-color;
+            }
+
+            &:active {
+                background-color: $active-primary-color;
+            }
+
+        }
+        
     }
 }
