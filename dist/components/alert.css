@@ -1,0 +1,2 @@
+.alert-overlay{width:100vw;height:100vh;position:absolute;top:0;display:flex;justify-content:center;align-items:center;background-color:rgba(0,0,0,.5)}.alert-overlay .alert-box{width:920px;height:210px;background-color:#fff}.alert-overlay .alert-box__title{font-weight:700;font-size:px-to-rem(42)}
+/*# sourceMappingURL=alert.css.map */

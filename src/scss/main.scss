@@ -1,8 +1,7 @@
 @import "./utils/variables";
-
+@import "./utils/mixins";
 @import "./utils/normilize";
 @import "./utils/px-to-rem";
-
 @import "./components/base";
-
 @import "./components/header";
+@import "./components/alert";

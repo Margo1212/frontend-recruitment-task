@@ -5,7 +5,6 @@
     flex-direction: row;
     justify-content: center;
     padding-top: px-to-rem(96);
-    font-family: $base-font-family;
 
     .container{
         display: flex;
@@ -29,8 +28,7 @@
             height: px-to-rem(250);
 
             &__title{
-                font-weight: 700;
-                font-size: px-to-rem(42);
+                @include title-style;
             }
 
             &__text {
@@ -43,7 +41,7 @@
                 padding: 16px 40px;
                 border-radius: 32px;
                 background: $primary-color;
-                color: azure;
+                color: $primary-font-color;
                 border: none;
                 cursor: pointer;
 

@@ -1,4 +1,5 @@
 import createTag from "./utils/createTag.js";
+import { openPopup } from "./popup.js";
 
 export const createHeaderSection = () => {
     const headerSection = createTag({
@@ -36,11 +37,17 @@ export const createHeaderSection = () => {
         className: "content__text",
         tagText: "Infinitely scalable, feature-rich and cloud-native data management and protection for modern and legacy infrastructures and SaaS platforms, managed via a single app with no hardware required."
     })
-    
+
     const btnElement = createTag({
         tagName: "button",
         className: "content__btn",
         tagText: "Button",
+        tagEvent: {
+            name: "click",
+            callback: () => {
+                openPopup()
+            },
+          },
     })
     
     

@@ -1,0 +1,39 @@
+.alert-overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: $base-font-family;
+
+    .alert-box {
+        width: 920px;
+        height: 210px;
+        background-color: #fff;
+        padding: 56px 95px 0;
+        position: relative;
+        
+
+        &__title {
+           @include title-style;
+           margin-bottom: 24px;
+        }
+
+        &__icon {
+            width: px-to-rem(12);
+            height: px-to-rem(12);
+        }
+
+        &__btn {
+            border: none;
+            cursor: pointer;
+            background: none;
+            position: absolute;
+            top: px-to-rem(46);
+            right: px-to-rem(46);
+        }
+    }
+}
