@@ -7,17 +7,15 @@ export const openPopup = () => {
 
     const closePopup = (e) => {
 
-        if(e.target.matches(".alert-box, .alert-box__title, .alert-box__text" )){
+        if(e.target.matches(".alert-box, .alert-box__title, .alert-box__text, .alert-box__hightlight")){
             return;
          }
-         overlay.remove()
-      }
+         alert.remove()
+    }
 
-    // Alert
-
-    const overlay = createTag({
+    const alert = createTag({
         tagName: "div",
-        className: "alert-overlay",
+        className: "alert",
         tagEvent: {
             name: "click",
             callback: (e) => {
@@ -26,12 +24,12 @@ export const openPopup = () => {
           },
     });
 
-    const alertDiv = createTag({
+    const alertBox = createTag({
         tagName: "div",
         className: "alert-box",
     });
 
-    const popupTitle = createTag({
+    const alertTitle = createTag({
         tagName: "h2",
         className: "alert-box__title",
         tagText: "Alert!",
@@ -43,22 +41,23 @@ export const openPopup = () => {
         tagText: "0",
     });
 
-    const popupText = createTag({
+    const alertText = createTag({
         tagName: "p",
         className: "alert-box__text",
         tagText: `You have clicked times to related button.`,
     });
 
-    const closeIcon = createTag({
+    const alertCloseIcon = createTag({
         tagName: "img",
         className: "alert-box__icon",
         tagAttrs: [
-            { key: "src", value: "../../images/close.png" }
+            { key: "src", value: "../../images/close.png"},
+            { key: "alt", value: "Alert close icon" }
         ]
            
     });
 
-    const popupCloseBtn = createTag({
+    const alertCloseBtn = createTag({
         tagName: "button",
         className: "alert-box__btn",
         tagEvent: {
@@ -69,9 +68,9 @@ export const openPopup = () => {
           },
     });
 
-    const resetButton = createTag({
+    const resetCounterBtn = createTag({
         tagName: "button",
-        className: "alert-box__reset-btn",
+        className: "alert-box__reset-btn-closed",
         tagText: "Reset",
         tagEvent: {
             name: "click",
@@ -82,8 +81,8 @@ export const openPopup = () => {
           },
     })
 
-    overlay.appendChild(alertDiv)
-    popupCloseBtn.appendChild(closeIcon)
-    popupText.appendChild(spanElement)
-    alertDiv.append(popupTitle, popupText, popupCloseBtn, resetButton)  
+    alert.appendChild(alertBox)
+    alertCloseBtn.appendChild(alertCloseIcon)
+    alertText.appendChild(spanElement)
+    alertBox.append(alertTitle, alertText, alertCloseBtn, resetCounterBtn)  
 }

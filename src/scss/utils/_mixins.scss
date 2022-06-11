@@ -1,0 +1,23 @@
+@mixin title-style {
+    font-weight: 700;
+    font-size: px-to-rem(42);
+}
+
+@mixin btn-styles {
+    width: px-to-rem(128);
+    padding: px-to-rem(16) px-to-rem(40);
+    border-radius: px-to-rem(32);
+    background: $primary-color;
+    color: $primary-font-color;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $hover-primary-color;
+    }
+
+    &:active {
+        background-color: $active-primary-color;
+    }
+}

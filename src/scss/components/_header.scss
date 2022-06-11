@@ -15,7 +15,7 @@
         justify-content: space-between;
 
 
-        .image{
+        .header-image{
             width:  px-to-rem(505);
             height: px-to-rem(330);
         }
@@ -37,21 +37,7 @@
             }
 
             &__btn {
-                width: 128px;
-                padding: 16px 40px;
-                border-radius: 32px;
-                background: $primary-color;
-                color: $primary-font-color;
-                border: none;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: $hover-primary-color;
-                }
-
-                &:active {
-                    background-color: $active-primary-color;
-                }
+                @include btn-styles;
             }
         }
     }

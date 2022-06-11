@@ -1,4 +1,4 @@
-.alert-overlay {
+.alert {
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -10,10 +10,10 @@
     font-family: $base-font-family;
 
     .alert-box {
-        width: 920px;
-        height: 210px;
+        width: px-to-rem(920);
+        height: px-to-rem(210);
         background-color: #fff;
-        padding: 35px 95px 0;
+        padding: px-to-rem(35) px-to-rem(95) 0;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -21,7 +21,7 @@
 
         &__title {
            @include title-style;
-           margin-bottom: 20px;
+           margin-bottom: px-to-rem(20);
         }
 
         &__icon {
@@ -39,31 +39,14 @@
         }
 
 
-        &__reset-btn {
-                display: none;     
+        &__reset-btn-closed {
+            display: none;     
         }
 
-        &__open{
+        &__reset-btn-opened {
             display: block;
-            width: 128px;
-            padding: 13px 30px;
-            border-radius: 32px;
-            margin-top: 20px;
-            font-weight: 700;
-            background: $primary-color;
-            color: $primary-font-color;
-            border: none;
-            cursor: pointer;
-
-            &:hover {
-                background-color: $hover-primary-color;
-            }
-
-            &:active {
-                background-color: $active-primary-color;
-            }
-
-        }
-        
+            
+            @include btn-styles;
+        } 
     }
 }
