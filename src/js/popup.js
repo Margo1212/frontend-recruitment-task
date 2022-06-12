@@ -35,16 +35,25 @@ export const openPopup = () => {
         tagText: "Alert!",
     });
 
-    const spanElement = createTag({
-        tagName: "span",
-        className: "alert-box__hightlight",
-        tagText: "0",
-    });
-
     const alertText = createTag({
         tagName: "p",
         className: "alert-box__text",
-        tagText: `You have clicked times to related button.`,
+    });
+
+    const counterHighlight = createTag({
+        tagName: "span",
+        className: "alert-box__highlight",
+        tagText: "0 times",
+    });
+
+    const textToHighlight = createTag({
+        tagName: "span",
+        tagText: "You have clicked ",
+    });
+
+    const textAfterHighlight = createTag({
+        tagName: "span",
+        tagText: " to related button.",
     });
 
     const alertCloseIcon = createTag({
@@ -83,6 +92,6 @@ export const openPopup = () => {
 
     alert.appendChild(alertBox)
     alertCloseBtn.appendChild(alertCloseIcon)
-    alertText.appendChild(spanElement)
+    alertText.append(textToHighlight, counterHighlight, textAfterHighlight)
     alertBox.append(alertTitle, alertText, alertCloseBtn, resetCounterBtn)  
 }

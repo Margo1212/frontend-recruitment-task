@@ -12,7 +12,7 @@ const isBiggerThen = (number) => {
 
 const clickCounter = () => {
     counter++;
-    document.querySelector('.alert-box__hightlight').textContent = counter;
+    document.querySelector('.alert-box__highlight').textContent = `${counter} times`;
 
     isBiggerThen(5);
 }
