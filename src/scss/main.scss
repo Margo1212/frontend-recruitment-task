@@ -1,7 +1,9 @@
 @import "./utils/_variables";
 @import "./utils/_mixins";
+@import "./utils/_media-queries";
 @import "./utils/_normilize";
 @import "./utils/_px-to-rem";
+
 @import "./components/_base";
 @import "./components/_header";
 @import "./components/_alert";

@@ -1,6 +1,6 @@
 .alert {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     position: absolute;
     top: 0;
     display: flex;
@@ -9,19 +9,30 @@
     background-color: rgba(0, 0, 0, 0.5);
     font-family: $base-font-family;
 
+    @include lg {
+        padding: 0 px-to-rem(20);
+    }
+
     .alert-box {
         width: px-to-rem(920);
         height: px-to-rem(210);
         background-color: #fff;
-        padding: px-to-rem(35) px-to-rem(95) 0;
+        padding: 0 px-to-rem(35);
         display: flex;
         flex-direction: column;
+        justify-content: center;
         position: relative;
+
+        
         
 
         &__title {
            @include title-style;
            margin-bottom: px-to-rem(20);
+        }
+
+        &__highlight {
+            font-weight: 700;
         }
 
         &__icon {
@@ -45,6 +56,7 @@
 
         &__reset-btn-opened {
             display: block;
+            margin-top: px-to-rem(20);
             
             @include btn-styles;
         } 

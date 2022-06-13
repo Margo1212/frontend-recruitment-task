@@ -1,10 +1,20 @@
 .header {
     max-width: px-to-rem(1440);
-    height: px-to-rem(960);
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-top: px-to-rem(96);
+
+
+    @include lg-landscape {
+        height: 100vh;
+        padding: 0 px-to-rem(20);
+    }
+
+    @include xl {
+        padding: 0;
+    }
 
     .container{
         display: flex;
@@ -14,10 +24,41 @@
         align-items: center;
         justify-content: space-between;
 
+       
+        @include sm {
+            gap: px-to-rem(60);
+            padding: 0;
+        }
+
+        @include lg {
+            flex-direction: column;
+            justify-content: start;
+            padding: 0;
+            gap: px-to-rem(30);
+        }
+
+        @include lg-landscape {
+            flex-direction: row;
+        }
+
+        @include xl {
+            padding: 0 px-to-rem(20);
+            height: 100vh;
+        }
+
 
         .header-image{
+            max-width: 100%;
             width:  px-to-rem(505);
             height: px-to-rem(330);
+
+            @include sm {
+                min-width: 100%;
+            }
+
+            @include lg {
+                min-width: 50%;
+            }
         }
 
         .content {
@@ -27,13 +68,27 @@
             width: px-to-rem(380);
             height: px-to-rem(250);
 
+
+            @include sm {
+                width: 100vw; 
+                padding: 0 px-to-rem(20);
+            }
+
             &__title{
                 @include title-style;
+
+                @include md {
+                    font-size: px-to-rem(32);;
+                }
             }
 
             &__text {
                 font-weight: 300;
                 line-height: px-to-rem(24);
+
+                @include md {
+                    font-size: px-to-rem(14);;
+                }
             }
 
             &__btn {

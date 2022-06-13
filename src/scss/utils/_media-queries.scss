@@ -1,0 +1,29 @@
+@mixin sm {
+    @media only screen and (max-width: #{$screen-sm}) {
+        @content;
+    }
+ }
+
+ @mixin md {
+    @media only screen and (max-width: #{$screen-md}) {
+        @content;
+    }
+ }
+
+ @mixin lg {
+    @media only screen and (max-width: #{$screen-lg}){
+        @content;
+    }
+ }
+
+ @mixin lg-landscape {
+    @media only screen and (max-width: #{$screen-lg}) and (orientation: landscape) {
+        @content;
+    }
+ }
+
+ @mixin xl {
+    @media only screen and (max-width: #{$screen-xl}) {
+        @content;
+    }
+ }
