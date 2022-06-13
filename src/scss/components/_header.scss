@@ -5,6 +5,7 @@
     flex-direction: row;
     justify-content: center;
     padding-top: px-to-rem(96);
+    overflow: hidden;
 
 
     @include lg-landscape {
@@ -25,20 +26,22 @@
         justify-content: space-between;
 
        
-        @include sm {
-            gap: px-to-rem(60);
-            padding: 0;
-        }
-
         @include lg {
             flex-direction: column;
             justify-content: start;
-            padding: 0;
+            margin-top: px-to-rem(20);
             gap: px-to-rem(30);
+        }
+
+        @include sm {
+            gap: px-to-rem(60);
+            padding: 0;
+            margin-top: 0;
         }
 
         @include lg-landscape {
             flex-direction: row;
+            margin-top: 0;
         }
 
         @include xl {

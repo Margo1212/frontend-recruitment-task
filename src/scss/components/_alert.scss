@@ -23,9 +23,6 @@
         justify-content: center;
         position: relative;
 
-        
-        
-
         &__title {
            @include title-style;
            margin-bottom: px-to-rem(20);
@@ -48,7 +45,6 @@
             top: px-to-rem(46);
             right: px-to-rem(46);
         }
-
 
         &__reset-btn-closed {
             display: none;     

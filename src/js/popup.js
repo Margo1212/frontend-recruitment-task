@@ -1,17 +1,21 @@
 import createTag from "./utils/createTag.js";
 import { reset } from "./header.js";
 
-
-
 export const openPopup = () => {
-
     const closePopup = (e) => {
-
         if(e.target.matches(".alert-box, .alert-box__title, .alert-box__text, .alert-box__hightlight")){
             return;
          }
          alert.remove()
     }
+
+    (() => {
+        window.addEventListener("keydown", (e) => {
+            if (e.code === "Escape") {
+              alert.remove();
+            }
+        });
+    })();
 
     const alert = createTag({
         tagName: "div",
@@ -20,8 +24,12 @@ export const openPopup = () => {
             name: "click",
             callback: (e) => {
                 closePopup(e)
-            }
+            },
           },
+          tagAttrs: [
+            { key: "tabindex", value: "0" },
+            { key: "role", value: "button" },
+          ],
     });
 
     const alertBox = createTag({
@@ -61,9 +69,10 @@ export const openPopup = () => {
         className: "alert-box__icon",
         tagAttrs: [
             { key: "src", value: "../../images/close.png"},
-            { key: "alt", value: "Alert close icon" }
-        ]
-           
+            { key: "alt", value: "Alert close icon" },
+                { key: "tabindex", value: "0" },
+                { key: "role", value: "button" },
+              ], 
     });
 
     const alertCloseBtn = createTag({

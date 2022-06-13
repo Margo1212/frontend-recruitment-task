@@ -1,26 +1,24 @@
 import createTag from "./utils/createTag.js";
 import { openPopup } from "./popup.js";
-let counter = 0;
 
-const isBiggerThen = (number) => {
-    if (counter > number) {
+
+export const reset = (e) => {
+    e.preventDefault();
+    localStorage.setItem('counter', 0)
+};
+
+
+const clickCounter = () => {
+    let counter = localStorage.getItem('counter');
+    localStorage.setItem('counter', ++counter)
+
+    if (counter > 5) {
         const btnReset = document.querySelector('.alert-box__reset-btn-closed');
         btnReset.classList.remove('alert-box__reset-btn-closed');
         btnReset.classList.add('alert-box__reset-btn-opened');
     }
+    document.querySelector('.alert-box__highlight').textContent = `${counter} times`; 
 }
-
-const clickCounter = () => {
-    counter++;
-    document.querySelector('.alert-box__highlight').textContent = `${counter} times`;
-
-    isBiggerThen(5);
-}
-
-export const reset = (e) => {
-    e.preventDefault();
-    counter = 0;
-};
 
 const srcset = [
     "../../images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_ar_1_1,c_fill,g_auto__c_scale,w_200.jpg 200w,",
@@ -39,8 +37,7 @@ const srcset = [
     "../../images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_1400.jpg 1400w,",
   ];
 
-  const sizes = ["(max-width: 1400px) 100vw, 505px"];
-
+  
 export const createHeaderSection = () => {
     const headerSection = createTag({
         tagName: "header",
@@ -90,6 +87,9 @@ export const createHeaderSection = () => {
                 clickCounter()
             },
           },
+          tagAttrs: [
+            { key: "tabindex", value: "0" },
+          ],
     })
     
     headerSection.appendChild(headerContainer)
